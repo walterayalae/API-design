@@ -2,7 +2,7 @@
   "name": "apidesign",
   "version": "1.0.0",
   "description": "api design using node and mongoose",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/walterayalae/apidesign/issues"
   },
-  "homepage": "https://github.com/walterayalae/apidesign#readme"
+  "homepage": "https://github.com/walterayalae/apidesign#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.4"
+  }
 }
