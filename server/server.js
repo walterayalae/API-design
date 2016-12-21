@@ -14,10 +14,36 @@ var port = process.env.PORT || 8080;
 
 var router = express.Router();
 
+router.use(function(req, res, next){
+	console.log('It is happening');
+
+	next();
+});
+
 router.get('/', function(req, res){
 	res.send('It is working');
 
 });
+
+var User = require('../models/user');
+
+router.route('/users')
+		
+		.post(function(req, res){
+			console.log('res', req.body)
+			var user = new User();
+			user.name = req.body.name;
+			user.lastName = req.body.lastName;
+
+			user.save(function(err){
+				if(err)
+					res.send(err);
+
+				res.json({msg: 'User created!'});
+
+			});
+
+		});
 
 app.use('/api', router);
 
