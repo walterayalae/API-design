@@ -30,7 +30,6 @@ var User = require('../models/user');
 router.route('/users')
 		
 		.post(function(req, res){
-			console.log('res', req.body)
 			var user = new User();
 			user.name = req.body.name;
 			user.lastName = req.body.lastName;
@@ -42,8 +41,64 @@ router.route('/users')
 				res.json({msg: 'User created!'});
 
 			});
+		})
+
+		.get(function(req, res){
+			User.find(function(err, users){
+				if(err)
+					res.send(err);
+
+				res.json(users);
+
+			});
+		});
+
+router.route('/users/:id')
+
+	.get(function(req, res){
+		User.findById(req.params.id, function(err, user){
+			if(err)
+				res.send(err);
+
+			res.json(user);
 
 		});
+
+
+	})
+
+	.put(function(req, res){
+
+		User.findById(req.params.id, function(err, user){
+			if(err)
+				res.send(err);
+
+			user.name = req.body.name;
+			user.lastName = req.body.lastName;
+
+			user.save(function(err){
+				if(err)
+					res.send(err);
+
+				res.json('User updated!');
+
+			});
+
+		});
+	})
+
+	.delete(function(req, res){
+		User.remove({
+			_id:req.params.id
+		}, function(err, user){
+			if(err)
+				res.send(err);
+
+			res.json('User deleted!')
+		});
+
+
+	})
 
 app.use('/api', router);
 
