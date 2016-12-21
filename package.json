@@ -1,0 +1,22 @@
+{
+  "name": "apidesign",
+  "version": "1.0.0",
+  "description": "api design using node and mongoose",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walterayalae/apidesign.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walterayalae/apidesign/issues"
+  },
+  "homepage": "https://github.com/walterayalae/apidesign#readme"
+}
