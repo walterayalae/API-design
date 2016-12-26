@@ -1,10 +1,10 @@
-Designing RESTful API
+Designing RESTful APIs
 
 - Node
 - MongoDB
 - Mongoose
 
-Instrunctions:
+Instructions:
 
 npm install
 
