@@ -94,11 +94,11 @@ router.route('/users/:id')
 			if(err)
 				res.send(err);
 
-			res.json('User deleted!')
+			res.json('User deleted!');
 		});
 
 
-	})
+	});
 
 app.use('/api', router);
 
